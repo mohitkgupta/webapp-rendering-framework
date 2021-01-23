@@ -2,7 +2,7 @@
 <!-- 
 -->
 
-<object name="Test" object-class="com.etc.sample.Test" enforce="true"
+<object name="Test" object-class="com.vts.sample.Test" enforce="true"
 	edit-all="false" view-all="false" ormschema="false" id-column="tenderID"
 	parent-column="tenderParent">
 
@@ -51,7 +51,7 @@
 
 	<!-- Fully qualified Class name for view Helper class -->
 	<ui-viewhelper
-		class-name="com.vedantatree.publicbooks.web.viewHelper.TenderManagementViewHelper">
+		class-name="com.vedantatree.web.viewHelper.TenderManagementViewHelper">
 	</ui-viewhelper>
 
 	<!-- Path of custom search panel/jsp page, if we want to use any custom search page on our list page 
