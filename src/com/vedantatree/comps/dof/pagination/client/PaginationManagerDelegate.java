@@ -9,7 +9,7 @@ import org.vedantatree.utils.exceptions.server.ServerBusinessException;
 import org.vedantatree.utils.exceptions.server.ServerSystemException;
 
 import com.vedantatree.comps.dof.DOMetaData;
-import com.vedantatree.comps.dof.JNDILookupManager;
+import com.vedantatree.comps.dof.enterprise.JNDILookupManager;
 import com.vedantatree.comps.dof.pagination.PaginationData;
 import com.vedantatree.comps.dof.web.security.SecurityServletFilter;
 

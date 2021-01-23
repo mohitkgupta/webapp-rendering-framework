@@ -10,7 +10,7 @@ import org.vedantatree.utils.exceptions.ComponentException;
 import org.vedantatree.utils.exceptions.IErrorCodes;
 
 import com.vedantatree.comps.dof.DOMetaData;
-import com.vedantatree.comps.dof.JNDILookupManager;
+import com.vedantatree.comps.dof.enterprise.JNDILookupManager;
 
 
 /**

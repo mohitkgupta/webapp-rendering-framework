@@ -12,6 +12,7 @@ import org.vedantatree.utils.exceptions.IErrorCodes;
 import org.vedantatree.utils.exceptions.SystemException;
 import org.vedantatree.utils.exceptions.server.ServerBusinessException;
 
+import com.vedantatree.comps.dof.enterprise.JNDILookupManager;
 import com.vedantatree.comps.dof.enterprise.clients.MasterTable;
 import com.vedantatree.comps.dof.enterprise.clients.MasterTableHome;
 
