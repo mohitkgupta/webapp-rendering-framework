@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+-->
+
+<object name="Test" object-class="com.etc.sample.Test" enforce="true"
+	edit-all="false" view-all="false" ormschema="false" id-column="tenderID"
+	parent-column="tenderParent">
+
+	<!-- Tile Defination for current page -->
+	<page.tilesdef>CommonDef</page.tilesdef>
+
+	<!-- Base url for current form -->
+	<page.baseurl>ManageTender.do</page.baseurl>
+
+	<!--
+		Add Page required data needed to display on page. title - Main
+		title(heading) for add page desc - Subtitle or description for add
+		page footer - fotter for add page i.e. any small comment at the end of
+		page help - help page for add page
+	-->
+	<add.page.title>add.tm.title</add.page.title>
+	<add.page.desc>add.tm.desc</add.page.desc>
+	<add.page.footer>add.tm.footer</add.page.footer>
+	<add.page.help>add.tm.help</add.page.help>
+
+	<!--
+		Edit Page required data needed to display on page. title - Main
+		title(heading) for edit page desc - Subtitle or description for edit
+		page footer - fotter for edit page i.e. any small comment at the end
+		of page help - help page for edit page
+	-->
+	<edit.page.title>edit.tm.title</edit.page.title>
+	<edit.page.desc>edit.tm.desc</edit.page.desc>
+	<edit.page.footer>edit.tm.footer</edit.page.footer>
+	<edit.page.help>edit.tm.help</edit.page.help>
+
+	<!--
+		list Page required data needed to display on page. title - Main title
+		for list page i.e. Main heading for the page desc - Subtitle or
+		description for list page footer - fotter for list page i.e. any small
+		comment at the end of page help - help page for list page
+	-->
+
+	<list.page.title>list.tm.title</list.page.title>
+	<list.page.desc>list.tm.desc</list.page.desc>
+	<list.page.footer>list.tm.footer</list.page.footer>
+	<list.page.help>list.tm.help</list.page.help>
+
+	<!-- JavaScript function that will be called from list page -->
+	<popup-jsfunction>abcdef</popup-jsfunction>
+
+	<!-- Fully qualified Class name for view Helper class -->
+	<ui-viewhelper
+		class-name="com.vedantatree.publicbooks.web.viewHelper.TenderManagementViewHelper">
+	</ui-viewhelper>
+
+	<!-- Path of custom search panel/jsp page, if we want to use any custom search page on our list page 
+	User need to design the custom search jsp page and need to set WebAppConstants.CUSTOMIZED_SEARCH property. 
+	Using this, Abstract action will call the overriden methods for custom search, where user can modify the 
+	search clause and path url as per new search parameters 
+	Path should be relative to DynamicListPage 
+	-->
+	<custom-search-panel path=""/>
+
+	<!-- Required info for showing listing on list page	-->
+	<properties>
+		<!--
+
+			searchable - To set that this field is searchable or not. Default
+			value : false 
+			sortable - To set that this field is sortable or not.
+			Default value : true
+			dynamic - Value should be set to true if field value is calculated at runtime and is not coming from database
+			Default Value: false
+		-->
+		<property edit="true" view="true" view-link="true" sortable="false"
+			searchable="true">
+			<display-name>tm.tenderCode</display-name>
+			<db-name>tenderCode</db-name>
+			<validation-rule>notnull:charonly</validation-rule>
+		</property>
+
+		<property edit="true" view="true" view-link="true" sortable="false"
+			searchable="true">
+			<display-name>tm.tenderCode</display-name>
+			<db-name>tenderCode</db-name>
+			<validation-rule></validation-rule>
+		</property>
+		<property edit="true" view="true" view-link="true" sortable="false"
+			searchable="true">
+			<display-name>tm.tenderCode</display-name>
+			<db-name>tenderCode</db-name>
+			<validation-rule>notnull</validation-rule>
+		</property>
+		<property edit="true" view="true" view-link="true" sortable="false"
+			searchable="true" dynamic="true">
+			<display-name>tm.tenderValue</display-name>
+			<validation-rule>notnull</validation-rule>
+		</property>
+	</properties>
+
+	<!-- Possible Action -->
+	<actions>
+		<!-- Form actions that will be displayed on list page -->
+		<form-actions>
+			<!--
+				Form Action information to create a form action on list page 
+				popup - To ensure that form-action will be opened in poup or on same page
+				selection - In case of popup listing what will be selection type
+				class-name - class name for current action object 
+				url - url for current action 
+				roles - valid roles for current action display-name - Display
+				name for current action
+			-->
+			<form-action popup="true" selection="single|multiple"
+				class-name="alpha">
+				<url>ManageTender.do?actiion=edit</url>
+				<roles>user,admin</roles>
+				<display-name>common.edit</display-name>
+			</form-action>
+			<form-action popup="true" selection="single|multiple"
+				class-name="alpha1">
+				<url>ManageTender.do?actiion=edit</url>
+				<roles>user,admin</roles>
+				<display-name>common.edit</display-name>
+			</form-action>
+			<form-action popup="true" selection="single|multiple"
+				class-name="alpha1">
+				<url>ManageTender.do?actiion=edit</url>
+				<roles>user,admin</roles>
+				<display-name>common.edit</display-name>
+			</form-action>
+		</form-actions>
+
+		<!-- List actions that will be displayed on list page -->
+		<list-actions>
+			<!--
+				List action information for creating list action on list page 
+				popup - To ensure that list-action will be opened in poup or on same page
+				selection - In case of popup listing what will be selection type
+				class-name - class name for current action 
+				ajax - Action will be performed through AJAX call or simple 
+				url - url for current action
+				roles - valid roles for current action 
+				display-name - Display name for current action 
+				img - Image path for displaying on current action
+				confirmation-message - Message that will be required to show before actually calling the action as confirmation
+				error-page - error page path in case of any problem - -Not working
+
+				** Note - URL should be relative to base URL
+			-->
+			<list-action popup="true" selection="single|multiple"
+				class-name="alpha" ajax="true" orientation="right">
+				<url>ManageTender.do?action=edit</url>
+				<roles>storemanager,manager</roles>
+				<display-name img="view.gif">common.edit</display-name>
+				<confirmation-message>conf.msg</confirmation-message>
+				<error-page>/tendererror.jsp</error-page>
+			</list-action>
+			<list-action popup="true" selection="single|multiple"
+				class-name="beta" ajax="true">
+				<url>ManageTender.do?action=edit</url>
+				<roles>manager</roles>
+				<display-name img="view.gif">common.edit</display-name>
+				<confirmation-message>conf.msg</confirmation-message>
+				<error-page>/default</error-page>
+			</list-action>
+			<list-action popup="true" selection="single|multiple"
+				class-name="gama" ajax="true">
+				<url>ManageTender.do?actiion=edit</url>
+				<roles>user,admin</roles>
+				<display-name img="view.gif">common.edit</display-name>
+				<confirmation-message>conf.msg</confirmation-message>
+				<error-page>/tenderLaunchError.jsp</error-page>
+			</list-action>
+		</list-actions>
+
+		<!-- Edit Actions that will be displayed on add-edit page -->
+		<edit-actions>
+			<!--
+				Edit Action 
+				Information for creating action \
+				addaction - whether this action will be displayed on add page. 
+				Default value : true 
+				popup - To ensure that edit-action will be opened in poup or on same page
+				selection - In case of popup listing what will be selection type
+				class-name - class name for current action 
+				jsfunction - JavaScript function name that will work for current action 
+				jsinfo - JavaScript function parameter information 
+				jsreturn - JavaScript function returns or not 
+				actiontype - Type of action 
+				accesskey - To define a shortcut key for this action 
+				styleid - To set id or name field for this action 
+				tabindex - To set tab position for this action 
+				title - setting tool-tip for current action 
+				style - To set extra properties for this action for look & feel 
+				style-class - Set style-sheet class name for this action 
+				** Note : URL should be relative to base 
+				TODO :   - also handle the javascript calling event
+			-->
+			<edit-action addaction="true" popup="true" selection="single|multiple"
+				class-name="beta" jsfunction="onSubmit" jsinfo="validate" jsreturn="true|false"
+				action-type="submit|button|cancel" access-key="key" disabled="true|false"
+				style-id="id" tab-index="1" title="clickme" style="" style-class="main">
+				<url>ManageTender.do?actiion=edit</url>
+				<roles>user,admin</roles>
+				<display-name img="view.gif">common.edit</display-name>
+			</edit-action>
+			<edit-action addaction="true" popup="true" selection="single|multiple"
+				class-name="beta" jsfunction="onSubmit" jsinfo="validate" jsreturn="true|false"
+				actiontype="submit|button|cancel" accesskey="key" disabled="true|false"
+				styleid="id" tabindex="1" title="clickme" style="" style-class="main">
+				<url>ManageTender.do?actiion=edit</url>
+				<roles>user,admin</roles>
+				<display-name img="view.gif">common.edit</display-name>
+			</edit-action>
+			<edit-action addaction="true" popup="true" selection="single|multiple"
+				class-name="beta" jsfunction="onSubmit" jsinfo="validate" jsreturn="true|false"
+				actiontype="submit|button|cancel" accesskey="key" disabled="true|false"
+				styleid="id" tabindex="1" title="clickme" style="font-size:2px"
+				style-class="main">
+				<url>ManageTender.do?actiion=edit</url>
+				<roles>user,admin</roles>
+				<display-name img="view.gif">common.edit</display-name>
+			</edit-action>
+		</edit-actions>
+
+	</actions>
+</object> 
+
